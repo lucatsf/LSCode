@@ -17,11 +17,11 @@ Este é o repositório para o LSCode, um editor de código personalizado criado 
 
 No diretório do projeto, você pode executar:
 
-### `yarn dev`
+### `yarn tauri dev`
 
 Executa o aplicativo no modo de desenvolvimento. A aplicação será aberta em uma janela nativa e você poderá ver os erros de lint no terminal.
 
-### `yarn build:tauri`
+### `yarn tauri build`
 
 Compila o aplicativo para produção na pasta `src-tauri/target/release`. Isso empacota seu código React e o backend Rust em um executável desktop nativo.
 
@@ -41,4 +41,4 @@ Contribuições são bem-vindas! Se você tem ideias para melhorar este editor o
 
 ## Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto está sob a Licença Pública Geral GNU (GPL). Veja o arquivo `LICENSE` para mais detalhes.
