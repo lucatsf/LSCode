@@ -1,11 +1,18 @@
+import { MouseEvent } from "react"
 import { useSource } from "../context/SourceContext"
+import { IFile } from "../types"
 import FileIcon from "./FileIcon"
 import NavFolderItem from "./NavFolderItem"
 
-export default function NavFiles({files, visible}) {
+interface Props {
+  files: IFile[]
+  visible: boolean
+}
+
+export default function NavFiles({files, visible}: Props) {
   const {setSelect, selected, addOpenedFile} = useSource()
   
-  const onShow = async (ev, file) => {
+  const onShow = async (ev: React.MouseEvent<HTMLDivElement, MouseEvent>, file: IFile) => {
 
     ev.stopPropagation();
 

@@ -10,7 +10,11 @@ import nodejs from '../assets/nodejs.png';
 import rust from '../assets/rust.png';
 import js from '../assets/js.png';
 
-const icons = {
+interface Icons {
+  [key: string]: string
+}
+
+const icons: Icons = {
   tsx: react,
   css: css,
   svg: image,
@@ -32,7 +36,12 @@ const icons = {
   rs: rust,
 };
 
-export default function FileIcon({ name, size = 'base' }) {
+interface IFileIconProps {
+  name: string;
+  size?: 'sm' | 'base'
+}
+
+export default function FileIcon({ name, size = 'base' }: IFileIconProps) {
   const lastDotIndex = name.lastIndexOf('.')
   const ext = lastDotIndex !== -1 ? name.slice(lastDotIndex + 1).toLowerCase() : 'NONE'
   const cls = size === 'base' ? 'w-4' : 'w-3';

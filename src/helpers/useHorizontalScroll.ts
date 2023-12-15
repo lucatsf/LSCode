@@ -5,7 +5,7 @@ export default function useHorizontalScroll() {
 
   useEffect(() => {
     const elem = ref.current
-    const onWheel = (ev) => {
+    const onWheel = (ev: WheelEvent) => {
       if (!elem || ev.deltaY === 0) return;
 
       elem.scrollTo({

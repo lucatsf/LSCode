@@ -11,13 +11,18 @@ import { json } from "@codemirror/lang-json";
 import { rust } from "@codemirror/lang-rust";
 import { materialDark } from "cm6-theme-material-dark";
 
-export default function CodeEditor({ id, active }) {
+interface Props {
+  id: string;
+  active: boolean;
+}
+
+export default function CodeEditor({ id, active }: Props) {
   const isRendered = useRef(0)
   const editorId = useMemo(() => nanoid(), [])
   const visible = active ? '' : 'hidden'
   const editorRef = useRef<EditorView | null>(null)
 
-  const updateEditorContent = async (id) => {
+  const updateEditorContent = async (id: string) => {
     const file = getFileObject(id);
     const content = await readFile(file.path)
 
@@ -25,7 +30,7 @@ export default function CodeEditor({ id, active }) {
 
   }
 
-  const fillContentInEditor = (content) => {
+  const fillContentInEditor = (content: string) => {
     const elem = document.getElementById(editorId)
 
     if (elem && isRendered.current === 0) {
