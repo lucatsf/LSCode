@@ -1,4 +1,5 @@
 import "./App.css";
+import Sidebar from "./components/Sidebar";
 import { SourceProvider } from "./context/SourceContext";
 
 function App() {
@@ -7,7 +8,6 @@ function App() {
       <div className="wrapper">
         <div id="editor" className="h-screen flex items-start overflow-hidden bg-primary">
           <SourceProvider>
-          <div>teste</div>
             <Sidebar />
             {/* <CodeArea /> */}
           </SourceProvider>

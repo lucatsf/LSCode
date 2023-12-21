@@ -17,7 +17,6 @@ export default function Sidebar() {
 
     setProjectName(selected as string);
     readDirectory(selected + "/").then((files) => {
-      console.log(files);
       setFiles(files);
     });
   };
